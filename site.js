@@ -1,0 +1,3 @@
+document.querySelectorAll('.year').forEach(el=>el.textContent=new Date().getFullYear());
+// Change the current-event label automatically after its date, rather than presenting an old gig as upcoming.
+(function(){const event=document.querySelector('[data-event-date]');if(!event)return;const parts=event.dataset.eventDate.split('-').map(Number);const eventDate=new Date(parts[0],parts[1]-1,parts[2],23,59,59);if(new Date()>eventDate){const note=document.getElementById('events-status');if(note)note.textContent='01 / Event archive — November 2026';const label=event.querySelector('.micro');if(label)label.textContent='Past event / Friday, November 27, 2026';}})();
