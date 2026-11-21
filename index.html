@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>doblar.io — Mariano Ulibarri</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #111;
+      color: #eee;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      padding: 8vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 13vw, 12rem);
+      letter-spacing: -0.07em;
+      line-height: 0.9;
+      margin: 0;
+    }
+
+    .subtitle {
+      margin-top: 2rem;
+      color: #aaa;
+      font-size: 1.1rem;
+    }
+
+    .disciplines {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    footer {
+      color: #888;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>doblar.io</h1>
+      <p class="subtitle">
+        Music, images, design, and experiments.
+      </p>
+    </header>
+
+    <div class="disciplines">
+      <span>Music</span>
+      <span>Photography</span>
+      <span>Design</span>
+      <span>Experimental</span>
+    </div>
+
+    <footer>
+      Mariano Ulibarri
+    </footer>
+  </main>
+</body>
+</html>
