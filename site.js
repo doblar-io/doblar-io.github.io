@@ -1,3 +1,32 @@
 document.querySelectorAll('.year').forEach(el=>el.textContent=new Date().getFullYear());
-// Change the current-event label automatically after its date, rather than presenting an old gig as upcoming.
-(function(){const event=document.querySelector('[data-event-date]');if(!event)return;const parts=event.dataset.eventDate.split('-').map(Number);const eventDate=new Date(parts[0],parts[1]-1,parts[2],23,59,59);if(new Date()>eventDate){const note=document.getElementById('events-status');if(note)note.textContent='01 / Event archive — November 2026';const label=event.querySelector('.micro');if(label)label.textContent='Past event / Friday, November 27, 2026';}})();
+(function(){
+  const upcoming=document.getElementById('upcoming-list');
+  const archive=document.getElementById('archive-grid');
+  if(!upcoming||!archive)return;
+  const now=new Date();
+  document.querySelectorAll('#upcoming-list [data-event-date]').forEach(card=>{
+    const [y,m,d]=card.dataset.eventDate.split('-').map(Number);
+    const end=new Date(y,m-1,d,23,59,59);
+    if(now>end){
+      const f=card.querySelector('img');
+      const title=card.querySelector('h2')?.innerText.replace(/\s+/g,' ').trim()||'PAST EVENT';
+      const fig=document.createElement('figure');
+      const im=document.createElement('img');
+      im.src=f.getAttribute('src');im.alt=f.alt;im.loading='lazy';
+      const caption=document.createElement('figcaption');caption.textContent=title.toUpperCase()+' / '+card.dataset.eventDate;
+      fig.append(im,caption);archive.prepend(fig);card.remove();
+    }
+  });
+  const note=document.getElementById('events-status');
+  if(note && !upcoming.querySelector('[data-event-date]'))note.textContent='UPCOMING / CHECK INSTAGRAM FOR NEW DATES';
+})();
+
+(function(){
+ const grid=document.getElementById('home-events');
+ if(!grid)return;
+ const now=new Date();
+ grid.querySelectorAll('[data-event-date]').forEach(el=>{
+   const [y,m,d]=el.dataset.eventDate.split('-').map(Number);
+   if(now>new Date(y,m-1,d,23,59,59))el.remove();
+ });
+})();
