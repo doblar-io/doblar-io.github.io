@@ -41,3 +41,13 @@ Social: https://instagram.com/parachutefactory and https://linkedin.com/in/maria
 - The DJ photo was of **Aaron Juarros (Bigtoe's Hifi)**, not Mariano. That photograph was removed from every page and removed from this package; it has been replaced with a found-sign photograph in the collage, the FlashBlack flyer in the sound tile, and a photographed doorway on About / CV.
 - The event flyers remain documentary records of past and upcoming events, not blanket claims of poster authorship.
 - **Publishing a replacement to an existing GitHub repository:** Upload these files into the existing repository; because GitHub web uploads may not automatically delete obsolete remote files, you can separately delete `assets/dj-portrait.webp` and `assets/tainted-80s.webp` from GitHub if you want those unused assets removed. Keep your existing `CNAME` file.
+
+
+## Version 4.3 — Search engine structured data
+
+- Added JSON-LD `WebSite`/`WebPage` markup to `index.html`, identifying the site as doblar.io and linking its creator to Mariano Ulibarri.
+- Added JSON-LD `ProfilePage` with `Person` as the `mainEntity` to `about.html`, with the same identity `@id`, factual bio, current role, education, and the Instagram and LinkedIn profile URLs.
+- Added canonical URLs to those two pages. No visible layout, images, or event content was changed.
+- No portrait image was declared because an official profile photo has not been chosen.
+- Upload only `index.html` and `about.html` to update an existing v4.2 site (keep other files and `CNAME`). Or upload the contents of this ZIP for a complete site update.
+- In Search Console, inspect `https://doblar.io/about.html` and request indexing after publishing. Use https://validator.schema.org/ or Google Rich Results Test for live validation. Markup does not guarantee a Knowledge Panel.
