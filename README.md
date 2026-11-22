@@ -1,69 +1,41 @@
-# doblar.io — Site v4
+# doblar.io — v4.5 Selected Projects + published references
 
-A static, mobile-responsive artist site for Mariano Ulibarri: selected work, current events, and an About / CV page.
+This package builds on v4.4 without replacing the site's photography and event galleries. It adds:
+- `/projects.html`: editorial index with four individually documented projects and a list of outside references
+- `/projects/parachute-factory.html`: founding Parachute Factory
+- `/projects/makerstate.html`: mobile library maker education
+- `/projects/metcraft.html`: visit by Li'l Chaos Crew that helped spark a Met MediaLab experiment (NOT a claim to have built the game)
+- `/projects/okeeffe-imaging.html`: participating-student role in the O'Keeffe imaging collaboration
+- homepage/standard navigation and About page links to projects
+- updated `sitemap.xml`
 
-## What changed
+## Editorial and attribution notes
+- Institutional project documents are distinguished from independent journalism. Being cited is not the same as an endorsement.
+- No archival photographs were inserted into historical project pages without evidence that they depict those projects. They are deliberately type-led.
+- `/Metcraft` credits The Met's MediaLab team with building the prototype, not Mariano.
+- O'Keeffe project explicitly identifies Mariano as a participating student rather than asserting specific deliverables.
+- All date-specific Makerstate reach estimates are clearly labeled as contemporary 2015 snapshots.
 
-- Less slogan copy, more images and literal archival labels.
-- The homepage retains **Still unfolding.**, adds **Eye Know.** as a photography section, and uses **Transmission.** as the moving-image tile.
-- The events page is now **All tomorrow’s parties.**, featuring three confirmed upcoming listings: FlashBlack Friday (Nov 27, 2026); El Fidel Photo Walk (Dec 5, 1:30–3:30 PM); and Nina Simone listening party (Dec 5, music until 5:30 PM).
-- The events page includes an archive of selected posters. After a date passes, its card moves into the archive in the visitor's browser. Homepage listings for past dates disappear.
-- About / CV incorporates the song-title reference **This must be the place.**
-- All supplied artwork is included as optimized WebP images. There are no invented events, embedded social feeds, or extended lyric excerpts.
+## Publishing
+Upload **the contents** of the extracted folder to your GitHub Pages repository root, preserving your live `CNAME` file. If using GitHub's UI, ensure the `projects` folder and its four HTML files are uploaded as a directory, not flattened to the root. The original v4.4 portrait, styles, social images, event dates, metadata, and site logic are retained.
 
-## Publish on GitHub Pages
+After publishing, submit `https://doblar.io/sitemap.xml` in Google Search Console and request indexing for `projects.html`. Browse each project page on mobile to check layout.
 
-1. Extract the ZIP. Upload **everything inside** this folder to the root of `doblar-io/doblar-io.github.io`, replacing earlier files and copying the `assets/` directory.
-2. Keep your existing **CNAME** file (with `doblar.io`) in the repository. The package intentionally does not include or overwrite it.
-3. Commit to the `main` branch. GitHub Pages deploys the new version automatically.
-4. Check `https://doblar.io/`, `/events.html`, and `/about.html`.
+## References used when drafting
 
-## Updating upcoming events
+Parachute Factory:
+- New Mexico Magazine — Las Vegas Is Poised for a Revival: https://www.newmexicomagazine.org/blog/post/vegas-revival-86022/
+- Institute of Museum and Library Services — A Maker State, Powered by Libraries: https://www.imls.gov/grant-spotlights/maker-state-powered-libraries
+- Museum Computer Network — What’s the Point of a Museum Maker Space?: https://mcn.edu/resources/whats-the-point-of-a-museum-maker-space/
 
-Each event in `events.html` is an `<article class="event-card" data-event-date="YYYY-MM-DD">` with a flyer image and event details. Add new events as new articles in date order. In `index.html`, add a matching `<a class="home-event" data-event-date="YYYY-MM-DD">` to the homepage event strip. `site.js` hides elapsed dates on the homepage and archives events after the local calendar date passes. Keep direct event details and the archive up to date from confirmed flyers.
+New Mexico Makerstate:
+- Institute of Museum and Library Services — A Maker State, Powered by Libraries: https://www.imls.gov/grant-spotlights/maker-state-powered-libraries
+- D-Lib Magazine — New Mexico’s Makerstate Initiative: https://www.dlib.org/dlib/september15/09inbrief.html
+- New Mexico Highlands University — ARMAS Staff biography: https://www.nmhu.edu/armas/armas-staff/
 
-Social: https://instagram.com/parachutefactory and https://linkedin.com/in/mariano-ulibarri
+/Metcraft:
+- The Metropolitan Museum of Art — /Metcraft: https://www.metmuseum.org/es/perspectives/metcraft
+- Museum Computer Network — What’s the Point of a Museum Maker Space?: https://mcn.edu/resources/whats-the-point-of-a-museum-maker-space/
 
-
-## Version 4.1 — Poster / event attribution
-
-- Event flyers are shown as documentation of events, not automatically credited as designs by Mariano Ulibarri. Some may be his work; others may be collaborators' or event organizers' designs.
-- The standalone Selected Work collage is photographic (with no ambiguous poster attribution).
-- The home flyer gallery and the Events archive are explicitly labeled **events**, separated from the authored work.
-- Existing upcoming dates and automatic past/upcoming logic are unchanged. Where actual artwork credits are known later, add them to individual events rather than making blanket authorship claims.
-
-
-## Version 4.2 — approved copy and image corrections
-
-- Home headline remains **Still unfolding.**, with **This must be the place.** directly below it. The latter remains at the end of About / CV.
-- Selected-work lead text is now **Posters, photographs, DJ nights, and other evidence.**
-- FlashBlack Friday uses the **turntable / red slipmat flyer** on both Home and Events, rather than the television design.
-- The DJ photo was of **Aaron Juarros (Bigtoe's Hifi)**, not Mariano. That photograph was removed from every page and removed from this package; it has been replaced with a found-sign photograph in the collage, the FlashBlack flyer in the sound tile, and a photographed doorway on About / CV.
-- The event flyers remain documentary records of past and upcoming events, not blanket claims of poster authorship.
-- **Publishing a replacement to an existing GitHub repository:** Upload these files into the existing repository; because GitHub web uploads may not automatically delete obsolete remote files, you can separately delete `assets/dj-portrait.webp` and `assets/tainted-80s.webp` from GitHub if you want those unused assets removed. Keep your existing `CNAME` file.
-
-
-## Version 4.3 — Search engine structured data
-
-- Added JSON-LD `WebSite`/`WebPage` markup to `index.html`, identifying the site as doblar.io and linking its creator to Mariano Ulibarri.
-- Added JSON-LD `ProfilePage` with `Person` as the `mainEntity` to `about.html`, with the same identity `@id`, factual bio, current role, education, and the Instagram and LinkedIn profile URLs.
-- Added canonical URLs to those two pages. No visible layout, images, or event content was changed.
-- No portrait image was declared because an official profile photo has not been chosen.
-- Upload only `index.html` and `about.html` to update an existing v4.2 site (keep other files and `CNAME`). Or upload the contents of this ZIP for a complete site update.
-- In Search Console, inspect `https://doblar.io/about.html` and request indexing after publishing. Use https://validator.schema.org/ or Google Rich Results Test for live validation. Markup does not guarantee a Knowledge Panel.
-
-
-## Version 4.4 — Portrait and search/discovery cleanup
-
-- The supplied headshot of Mariano Ulibarri now replaces the found-doorway photograph on the About/CV page, with a neutral descriptive caption.
-- `Person.image` and `ProfilePage.primaryImageOfPage` now reference the same real portrait. No AI/generated person photo is used.
-- Added `sitemap.xml` for the three public pages and `robots.txt` pointing to that sitemap.
-- Added consistent canonical URLs, Open Graph metadata (including three self-hosted preview images), and large-card social preview tags.
-- Corrected the Agency by Design link to Harvard Project Zero's Agency by Design page (the older link incorrectly went to Makerstate).
-- Design, existing photography galleries, song-title references, and event dates remain unchanged.
-
-### Publishing v4.4
-
-Upload *all files and the entire `assets/` folder* to the repository root, overwriting corresponding files. GitHub's web interface may retain old, unused assets: that is fine. **Keep your existing `CNAME` file** (`doblar.io`).
-
-After GitHub Pages deploys, submit `https://doblar.io/sitemap.xml` in Search Console → Sitemaps, and inspect `https://doblar.io/about.html` with URL Inspection. Social previews may be cached by individual platforms.
+O’Keeffe Imaging:
+- Georgia O’Keeffe Imaging Project — NMHU 620: https://okeeffeimagingproject.wordpress.com/nmhu/

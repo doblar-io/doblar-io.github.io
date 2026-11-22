@@ -1,12 +1,2 @@
 <?xml version='1.0' encoding='utf-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://doblar.io/</loc>
-  </url>
-  <url>
-    <loc>https://doblar.io/about.html</loc>
-  </url>
-  <url>
-    <loc>https://doblar.io/events.html</loc>
-  </url>
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://doblar.io/</loc></url><url><loc>https://doblar.io/about.html</loc></url><url><loc>https://doblar.io/events.html</loc></url><url><loc>https://doblar.io/projects.html</loc></url><url><loc>https://doblar.io/projects/parachute-factory.html</loc></url><url><loc>https://doblar.io/projects/makerstate.html</loc></url><url><loc>https://doblar.io/projects/metcraft.html</loc></url><url><loc>https://doblar.io/projects/okeeffe-imaging.html</loc></url></urlset>
