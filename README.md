@@ -51,3 +51,19 @@ Social: https://instagram.com/parachutefactory and https://linkedin.com/in/maria
 - No portrait image was declared because an official profile photo has not been chosen.
 - Upload only `index.html` and `about.html` to update an existing v4.2 site (keep other files and `CNAME`). Or upload the contents of this ZIP for a complete site update.
 - In Search Console, inspect `https://doblar.io/about.html` and request indexing after publishing. Use https://validator.schema.org/ or Google Rich Results Test for live validation. Markup does not guarantee a Knowledge Panel.
+
+
+## Version 4.4 — Portrait and search/discovery cleanup
+
+- The supplied headshot of Mariano Ulibarri now replaces the found-doorway photograph on the About/CV page, with a neutral descriptive caption.
+- `Person.image` and `ProfilePage.primaryImageOfPage` now reference the same real portrait. No AI/generated person photo is used.
+- Added `sitemap.xml` for the three public pages and `robots.txt` pointing to that sitemap.
+- Added consistent canonical URLs, Open Graph metadata (including three self-hosted preview images), and large-card social preview tags.
+- Corrected the Agency by Design link to Harvard Project Zero's Agency by Design page (the older link incorrectly went to Makerstate).
+- Design, existing photography galleries, song-title references, and event dates remain unchanged.
+
+### Publishing v4.4
+
+Upload *all files and the entire `assets/` folder* to the repository root, overwriting corresponding files. GitHub's web interface may retain old, unused assets: that is fine. **Keep your existing `CNAME` file** (`doblar.io`).
+
+After GitHub Pages deploys, submit `https://doblar.io/sitemap.xml` in Search Console → Sitemaps, and inspect `https://doblar.io/about.html` with URL Inspection. Social previews may be cached by individual platforms.
